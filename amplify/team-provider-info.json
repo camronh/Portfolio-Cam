@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-portoliocam-dev-91723-authRole",
+            "UnauthRoleArn": "arn:aws:iam::723049199225:role/amplify-portoliocam-dev-91723-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::723049199225:role/amplify-portoliocam-dev-91723-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-portoliocam-dev-91723-deployment",
+            "UnauthRoleName": "amplify-portoliocam-dev-91723-unauthRole",
+            "StackName": "amplify-portoliocam-dev-91723",
+            "StackId": "arn:aws:cloudformation:us-east-1:723049199225:stack/amplify-portoliocam-dev-91723/b098c820-d100-11eb-af7f-0ac97ebd7097",
+            "AmplifyAppId": "d17736nn44naw5"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d17736nn44naw5",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}
