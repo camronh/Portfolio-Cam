@@ -2,7 +2,7 @@
   <div>
     <v-app-bar flat color="transparent">
       <v-toolbar-title>
-        Portfolio
+        Contact
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <AvatarMenu />
