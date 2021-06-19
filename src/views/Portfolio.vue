@@ -29,33 +29,46 @@
               <span class="subheading">Select Stack</span>
 
               <v-chip-group
-                v-model="selection"
+                v-model="selectedStack"
                 active-class="primary--text"
                 multiple
               >
-                <v-chip>Extra Soft</v-chip>
-                <v-chip>Soft</v-chip>
-                <v-chip>Medium</v-chip>
-                <v-chip>Hard</v-chip>
+                <v-chip v-for="skill of skills" :key="skill">
+                  {{ skill }}
+                </v-chip>
               </v-chip-group>
             </v-card-text>
             <v-divider></v-divider>
             <v-container fluid>
               <v-row dense>
                 <v-col
-                  v-for="card in cards"
-                  :key="card.title"
-                  :cols="card.flex"
+                  v-for="project in projects"
+                  :key="project.title"
+                  :cols="project.flex"
                 >
                   <v-card>
                     <v-img
-                      :src="card.src"
+                      :src="project.src"
                       class="white--text align-end"
                       gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                       height="200px"
                     >
-                      <v-card-title v-text="card.title"></v-card-title>
+                      <v-card-title v-text="project.title"></v-card-title>
+                      <v-card-subtitle>
+                        {{ project.description }}
+                      </v-card-subtitle>
                     </v-img>
+                    <v-card-actions>
+                      <v-chip-group column>
+                        <v-chip
+                          v-for="skill of project.skills"
+                          :key="skill"
+                          outlined
+                        >
+                          {{ skill }}
+                        </v-chip>
+                      </v-chip-group>
+                    </v-card-actions>
                   </v-card>
                 </v-col>
               </v-row>
@@ -76,21 +89,56 @@ export default {
   data() {
     return {
       showMenu: false,
-      cards: [
+      selectedStack: [],
+      skills: [
+        "NodeJS",
+        "Javascript",
+        "Lambda",
+        "API Gateway",
+        "Linux",
+        "CI/CD",
+        "Terraform",
+        "VueJS",
+        "Wordpress",
+        "Solidity / Web3",
+      ],
+      projects: [
         {
-          title: "Pre-fab homes",
+          title: "Brazy Proxies Admin Dashboard",
           src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
           flex: 6,
+          skills: [
+            "NodeJS",
+            "Lambda",
+            "API Gateway",
+            "CI/CD",
+            "VueJS",
+            "Linux",
+          ],
+          description:
+            "Dashboard that connects back end Squid servers for Admin",
         },
         {
-          title: "Favorite road trips",
+          title: "Brazy Proxies Residential Dashboard",
           src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
           flex: 6,
+          skills: ["Javascript", "Lambda", "API Gateway", "Wordpress"],
+          description:
+            "Dashboard for users to manage their residential proxy subscription",
         },
         {
-          title: "Best airlines",
+          title: "Dali",
           src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
           flex: 6,
+          skills: ["NodeJS", "Lambda", "API Gateway", "CI/CD", "VueJS"],
+          description: "Mobile-first web app that helps users plan their week",
+        },
+        {
+          title: "dApple Tree",
+          src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+          flex: 6,
+          skills: ["NodeJS", "CI/CD", "VueJS", "Solidity / Web3"],
+          description: "Decentralized procurement powered by Airnode",
         },
       ],
     };
