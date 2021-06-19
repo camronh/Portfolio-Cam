@@ -21,44 +21,40 @@
           class="d-flex flex-column justify-center align-center"
         >
           <v-card>
-            <v-card-title>Web Developer</v-card-title>
-            <v-card-subtitle
-              >I specialize in AWS Cloud Solutions</v-card-subtitle
-            >
-            <v-card-text
-              >Hi, I'm Camron, a Javascript Developer. I have been coding for 37
-              years straight and I would make your company mad good</v-card-text
-            >
-            <v-card-text
-              >Hi, I'm Camron, a Javascript Developer. I have been coding for 37
-              years straight and I would make your company mad good</v-card-text
-            >
+            <v-card-title>
+              <h2>
+                Back-End Developer
+              </h2>
+            </v-card-title>
+            <v-card-subtitle>
+              I specialize in AWS Cloud Solutions
+            </v-card-subtitle>
+            <v-card-text>
+              Hi, I'm Camron, a Javascript Developer. I got started in
+              development in 2016 when I started my proxy business. I quickly
+              found my niche with serverless technology. I've picked up a lot of
+              helpful skills along the my development journey. It's nice to meet
+              you!
+            </v-card-text>
+
             <v-divider></v-divider>
             <v-card-title>
               Skills
             </v-card-title>
             <v-card-text>
               <v-list>
-                <v-list-item>
+                <v-list-item v-for="skill of skills" :key="skill.title">
                   <v-list-item-content>
                     <v-list-item-title>
-                      Javascript
+                      {{ skill.title }}
                     </v-list-item-title>
                     <v-list-item-subtitle>
-                      4 Yrs
+                      {{ skill.duration }}
                     </v-list-item-subtitle>
-                    <v-progress-linear rounded value="90"></v-progress-linear>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      Vue
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                      2 Yrs
-                    </v-list-item-subtitle>
-                    <v-progress-linear rounded value="50"></v-progress-linear>
+                    <v-progress-linear
+                      rounded
+                      :value="skill.value"
+                    ></v-progress-linear>
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -87,7 +83,17 @@ export default {
     AvatarMenu,
   },
   data() {
-    return { showMenu: false };
+    return {
+      showMenu: false,
+      skills: [
+        { title: "NodeJS", duration: "4 Years", value: 90 },
+        { title: "AWS", duration: "4 Years", value: 70 },
+        { title: "Linux", duration: "4 Years", value: 70 },
+        { title: "Wordpress", duration: "4 Years", value: 70 },
+        { title: "Vue JS", duration: "1 Year", value: 40 },
+        { title: "Solidity / Web3", duration: "6 Months", value: 25 },
+      ],
+    };
   },
 };
 </script>
