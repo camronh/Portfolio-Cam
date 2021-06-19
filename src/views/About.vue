@@ -61,12 +61,11 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-
-              <v-btn>
-                Contact Me
-              </v-btn>
-              <v-btn>
+              <v-btn text color="grey" link to="/portfolio">
                 Portfolio
+              </v-btn>
+              <v-btn text color="grey">
+                Contact Me
               </v-btn>
             </v-card-actions>
           </v-card>
