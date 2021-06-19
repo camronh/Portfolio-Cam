@@ -42,7 +42,7 @@
             <v-container fluid>
               <v-row dense>
                 <v-col
-                  v-for="project in projects"
+                  v-for="project in filteredProjects"
                   :key="project.title"
                   :cols="project.flex"
                 >
@@ -85,6 +85,18 @@ import AvatarMenu from "../components/AvatarMenu";
 export default {
   components: {
     AvatarMenu,
+  },
+  computed: {
+    filteredProjects() {
+      if (!this.selectedStack.length) return this.projects;
+      let stack = this.selectedStack.map(i => this.skills[i]);
+      return this.projects.filter(project => {
+        for (let skill of project.skills) {
+          if (stack.includes(skill)) return true;
+        }
+        return false;
+      });
+    },
   },
   data() {
     return {
