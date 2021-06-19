@@ -33,7 +33,7 @@
                 active-class="primary--text"
                 multiple
               >
-                <v-chip v-for="skill of skills" :key="skill">
+                <v-chip v-for="skill of skills" :key="skill" outlined>
                   {{ skill }}
                 </v-chip>
               </v-chip-group>
@@ -46,7 +46,7 @@
                   :key="project.title"
                   :cols="project.flex"
                 >
-                  <v-card>
+                  <v-card link :to="project.url">
                     <v-img
                       :src="project.src"
                       class="white--text align-end"
@@ -129,7 +129,9 @@ export default {
           ],
           description:
             "Dashboard that connects back end Squid servers for Admin",
+          url: "/portfolio/BrazyProxies",
         },
+
         {
           title: "Brazy Proxies Residential Dashboard",
           src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
@@ -137,6 +139,7 @@ export default {
           skills: ["Javascript", "Lambda", "API Gateway", "Wordpress"],
           description:
             "Dashboard for users to manage their residential proxy subscription",
+          url: "/portfolio/BrazyProxies",
         },
         {
           title: "Dali",
