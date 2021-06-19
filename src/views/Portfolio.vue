@@ -14,65 +14,68 @@
     <br />
     <v-container fluid pa-0>
       <v-row align="center" justify="center" dense>
-        <v-col
-          cols="12"
-          lg="6"
-          md="6"
-          class="d-flex flex-column justify-center align-center"
-        >
-          <v-card>
-            <v-card-title>Web Developer</v-card-title>
-            <v-card-subtitle
-              >I specialize in AWS Cloud Solutions</v-card-subtitle
-            >
-            <v-card-text
-              >Hi, I'm Camron, a Javascript Developer. I have been coding for 37
-              years straight and I would make your company mad good</v-card-text
-            >
-            <v-card-text
-              >Hi, I'm Camron, a Javascript Developer. I have been coding for 37
-              years straight and I would make your company mad good</v-card-text
-            >
-            <v-divider></v-divider>
+        <v-col cols="12" lg="6" md="6">
+          <v-card color="transparent">
             <v-card-title>
-              Skills
+              <h2>
+                My Work
+              </h2>
             </v-card-title>
-            <v-card-text>
-              <v-list>
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      Javascript
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                      4 Yrs
-                    </v-list-item-subtitle>
-                    <v-progress-linear rounded value="90"></v-progress-linear>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      Vue
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                      2 Yrs
-                    </v-list-item-subtitle>
-                    <v-progress-linear rounded value="50"></v-progress-linear>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
+            <v-card-subtitle>
+              Here are some of the projects that I have worked on
+            </v-card-subtitle>
 
-              <v-btn>
-                Contact Me
-              </v-btn>
-              <v-btn>
-                Portfolio
-              </v-btn>
-            </v-card-actions>
+            <v-card-text>
+              <span class="subheading">Select Stack</span>
+
+              <v-chip-group
+                v-model="selection"
+                active-class="primary--text"
+                multiple
+              >
+                <v-chip>Extra Soft</v-chip>
+                <v-chip>Soft</v-chip>
+                <v-chip>Medium</v-chip>
+                <v-chip>Hard</v-chip>
+              </v-chip-group>
+            </v-card-text>
+            <v-divider></v-divider>
+            <v-container fluid>
+              <v-row dense>
+                <v-col
+                  v-for="card in cards"
+                  :key="card.title"
+                  :cols="card.flex"
+                >
+                  <v-card>
+                    <v-img
+                      :src="card.src"
+                      class="white--text align-end"
+                      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                      height="200px"
+                    >
+                      <v-card-title v-text="card.title"></v-card-title>
+                    </v-img>
+
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+
+                      <v-btn icon>
+                        <v-icon>mdi-heart</v-icon>
+                      </v-btn>
+
+                      <v-btn icon>
+                        <v-icon>mdi-bookmark</v-icon>
+                      </v-btn>
+
+                      <v-btn icon>
+                        <v-icon>mdi-share-variant</v-icon>
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
           </v-card>
         </v-col>
       </v-row>
@@ -87,7 +90,26 @@ export default {
     AvatarMenu,
   },
   data() {
-    return { showMenu: false };
+    return {
+      showMenu: false,
+      cards: [
+        {
+          title: "Pre-fab homes",
+          src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+          flex: 6,
+        },
+        {
+          title: "Favorite road trips",
+          src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+          flex: 6,
+        },
+        {
+          title: "Best airlines",
+          src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+          flex: 6,
+        },
+      ],
+    };
   },
 };
 </script>
