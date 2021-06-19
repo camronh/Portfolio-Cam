@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar flat>
+    <v-app-bar flat color="transparent">
       <v-toolbar-title>
         About Me
       </v-toolbar-title>
