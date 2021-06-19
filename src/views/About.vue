@@ -5,15 +5,7 @@
         About Me
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-avatar>
-        <img
-          src="https://randomuser.me/api/portraits/women/81.jpg"
-          alt="logo"
-        />
-      </v-avatar>
-      <p class="ml-3">
-        Camron Haider
-      </p>
+      <AvatarMenu />
     </v-app-bar>
     <br />
     <br />
@@ -89,11 +81,13 @@
 </template>
 
 <script>
-import ProfileCard from "../components/Header";
-
+import AvatarMenu from "../components/AvatarMenu";
 export default {
   components: {
-    ProfileCard,
+    AvatarMenu,
+  },
+  data() {
+    return { showMenu: false };
   },
 };
 </script>
