@@ -9,9 +9,6 @@
     </v-app-bar>
     <br />
     <br />
-    <br />
-    <br />
-    <br />
     <v-container fluid pa-0>
       <v-row align="center" justify="center" dense>
         <v-col

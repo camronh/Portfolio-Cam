@@ -8,10 +8,6 @@
       <AvatarMenu />
     </v-app-bar>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <v-container fluid pa-0>
       <v-row align="center" justify="center" dense>
         <v-col cols="12" lg="6" md="6">
