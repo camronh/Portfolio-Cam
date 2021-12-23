@@ -1,0 +1,7 @@
+ports:
+  - port: 8080
+    onOpen: open-browser
+tasks:
+  - name: Front End
+    init: npm install
+    command: npm run serve
