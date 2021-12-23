@@ -82,8 +82,8 @@ export default {
     return {
       showMenu: false,
       skills: [
-        { title: "NodeJS", duration: "4 Years", value: 90 },
-        { title: "AWS", duration: "4 Years", value: 70 },
+        { title: "NodeJS", duration: "2 Years", value: 80 },
+        { title: "AWS", duration: "2 Years", value: 70 },
         { title: "Linux", duration: "4 Years", value: 70 },
         { title: "Wordpress", duration: "4 Years", value: 70 },
         { title: "Vue JS", duration: "1 Year", value: 40 },
