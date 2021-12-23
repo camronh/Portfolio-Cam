@@ -26,7 +26,7 @@
               >I specialize in AWS Cloud Solutions</v-card-subtitle
             >
             <v-card-text
-              >Hi, I'm Camron, a Javascript Developer. I have been coding for 37
+              >Hi, I'm Camron Haider, a Javascript Developer. I have been coding for 37
               years straight and I would make your company mad good</v-card-text
             >
             <v-card-text
