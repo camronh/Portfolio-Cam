@@ -2,7 +2,7 @@
   <div>
     <v-app-bar flat color="transparent">
       <v-toolbar-title>
-        About Me
+        About Me Goat
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <AvatarMenu />
